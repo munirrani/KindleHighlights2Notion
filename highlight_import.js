@@ -75,6 +75,11 @@ let bookContent = {
 function scrapBookAuthor() {
 
     bookTitle = document.querySelector(".bookTitle").textContent.trim()
+
+    // Remove this bracket () if book title contains one.
+    index = bookTitle.indexOf("(")
+    if (index != -1) bookTitle = bookTitle.substring(0, index - 1)
+
     bookTitleSearch = bookTitle.split(" ").slice(0, 3).join(" ") // Pick the first three words
 
     var bookAuthor = document.querySelector(".authors").textContent.trim()
