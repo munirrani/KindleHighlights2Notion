@@ -131,7 +131,7 @@ function scrapBookContent() {
             highlightColor = ""
         }
 
-        noteContent = noteText.textContent.trim()
+        noteContent = noteText.textContent.trim().split(/\n/)[0]
 
         bookContent[headingLocation] = {
             text_content: noteContent,
